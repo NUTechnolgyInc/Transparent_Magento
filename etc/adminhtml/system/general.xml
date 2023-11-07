@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © TransparentCDN, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+           showInStore="1">
+        <label>General Settings</label>
+        <comment>Make sure you've already configured ...</comment>
+        <field id="cdn_is_enabled" translate="label comment" type="select" sortOrder="0" showInDefault="1"
+               showInWebsite="1" showInStore="1">
+            <label>Enable Module</label>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <config_path>transparentedgecdn/general/cdn_is_enabled</config_path>
+        </field>
+        <field id="cdn_company_alias" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+               showInWebsite="1" showInStore="1">
+            <label>Company ID</label>
+            <config_path>transparentedgecdn/general/cdn_company_id</config_path>
+            <validate>required-entry validate-number</validate>
+            <depends>
+                <field id="cdn_is_enabled">1</field>
+            </depends>
+        </field>
+        <field id="cdn_client_key" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+               showInWebsite="1" showInStore="1">
+            <label>Client Key</label>
+            <config_path>transparentedgecdn/general/cdn_client_key</config_path>
+            <validate>required-entry</validate>
+            <depends>
+                <field id="cdn_is_enabled">1</field>
+            </depends>
+        </field>
+        <field id="cdn_secret_key" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+               showInWebsite="1" showInStore="1">
+            <label>Secret key</label>
+            <config_path>transparentedgecdn/general/cdn_secret_key</config_path>
+            <validate>required-entry</validate>
+            <depends>
+                <field id="cdn_is_enabled">1</field>
+            </depends>
+        </field>
+    </group>
+</include>

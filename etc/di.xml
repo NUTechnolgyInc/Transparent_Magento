@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © TransparentCDN, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="TransparentCDN\TransparentEdge\Observer\FlushAllCacheObserver">
+        <arguments>
+            <argument name="storeManager" xsi:type="object" shared="false">Magento\Store\Model\StoreManager</argument>
+            <argument name="config" xsi:type="object" shared="false">TransparentCDN\TransparentEdge\Model\Config</argument>
+            <argument name="purgeCache" xsi:type="object" shared="false">TransparentCDN\TransparentEdge\Model\PurgeCache</argument>
+            <argument name="appEmulation" xsi:type="object" shared="false">Magento\Store\Model\App\Emulation</argument>
+        </arguments>
+    </type>
+</config>

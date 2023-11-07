@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © TransparentCDN, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="transparentcdn_transparentedgecdn" translate="label" type="text" sortOrder="10" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Transparent CDN</label>
+            <tab>advanced</tab>
+            <resource>TransparentCDN_TransparentEdge::configuration</resource>
+            <class>transparentedgecdn-section</class>
+            <include path="TransparentCDN_TransparentEdge::system/general.xml"/>
+        </section>
+    </system>
+</config>
