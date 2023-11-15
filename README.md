@@ -34,8 +34,12 @@ Login To Magento Backend
 Redirect to : 
 
 STORES -> CONFIGURATIONS -> ADVANCED -> Transparent CDN
+
 Enable Module -> YES
+
 CompanyID (Store View) : < Your Company Id>
+
 Client Key: < Your Client Key>
+
 Secret Key: < Your Secret Key>
 
