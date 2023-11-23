@@ -43,15 +43,18 @@ class AdminLogoutObserver implements ObserverInterface
      *
      * @param CookieManagerInterface $cookieManager
      * @param CookieMetadataFactory $cookieMetadataFactory
+     * @param SessionConfigInterface $sessionConfig
      * @param LoggerInterface $logger
      */
     public function __construct(
         CookieManagerInterface $cookieManager,
         CookieMetadataFactory  $cookieMetadataFactory,
+        SessionConfigInterface $sessionConfig,
         LoggerInterface        $logger
     ) {
         $this->cookieManager = $cookieManager;
         $this->cookieMetadataFactory = $cookieMetadataFactory;
+        $this->sessionConfig = $sessionConfig;
         $this->logger = $logger;
     }
 
