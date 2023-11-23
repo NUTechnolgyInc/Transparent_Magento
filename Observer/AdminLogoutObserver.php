@@ -64,16 +64,12 @@ class AdminLogoutObserver implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        $this->cookieManager->deleteCookie(
-            self::CDN_COOKIE_NAME,
-            $this->cookieMetadataFactory->createCookieMetadata(
-                [
-                    "path" => "/",
-                    "secure" => false,
-                    "http_only" => false
-                ]
-            )
-        );
+        if ($this->cookieManager->getCookie(self::CDN_COOKIE_NAME)) {
+            $metadata = $this->cookieMetadataFactory->createPublicCookieMetadata();
+            $metadata->setPath($this->sessionConfig->getCookiePath());
+            $this->cookieManager->deleteCookie(
+                self::CDN_COOKIE_NAME, $metadata);
+        }
         return $this;
     }
 }

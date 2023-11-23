@@ -81,11 +81,7 @@ class AdminLoginSucceeded implements ObserverInterface
         $lifetime = $this->config->getValue(Session::XML_PATH_SESSION_LIFETIME);
         $cookieMetadata = $this->cookieMetadataFactory->createPublicCookieMetadata()
             ->setDuration($lifetime)
-            ->setPath($this->sessionConfig->getCookiePath())
-            ->setDomain($this->sessionConfig->getCookieDomain())
-            ->setSecure($this->sessionConfig->getCookieSecure())
-            ->setHttpOnly($this->sessionConfig->getCookieHttpOnly())
-            ->setSameSite($this->sessionConfig->getCookieSameSite());
+            ->setPath($this->sessionConfig->getCookiePath());
         $this->cookieManager->setPublicCookie(
             self::CDN_COOKIE_NAME,
             self::CDN_COOKIE_VALUE,
